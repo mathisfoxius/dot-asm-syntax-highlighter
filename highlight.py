@@ -41,7 +41,7 @@ def preprocess_dot_file(input_file, output_file):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) != 3:
-        print("Usage: python highlight_dot.py input.dot output.dot")
+        print("Usage: python highlight.py input.dot output.dot")
         sys.exit(1)
 
     input_file = sys.argv[1]
