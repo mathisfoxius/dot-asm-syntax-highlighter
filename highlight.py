@@ -1,7 +1,7 @@
 import re
 import COLORS
-import arm
-import x64
+import architectures.arm as arm
+import architectures.x64 as x64
 
 
 COLOR_PALETTE = COLORS.light
