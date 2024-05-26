@@ -6,6 +6,6 @@ Usage: `python highlight.py input.dot output.dot`
 
 Afterwards a nice looking pdf can be generated using `dot -Tpdf -o output.pdf output.dot`
 
-Before           |  After
-:-------------------------:|:-------------------------:
-![](images/agfd1.png)  |  ![](images/output1.png)
+r2 output           |  Light | Dark
+:-------------------------:|:-------------------------:|:-------------------------:
+![](images/agfd1.png)  |  ![](images/light.png) | ![](images/dark.png)
