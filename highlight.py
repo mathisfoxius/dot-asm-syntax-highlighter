@@ -75,27 +75,28 @@ def preprocess_dot_file(input_file, output_file):
         file.write(highlighted_content)
 
 
-def main(input_file, arm=False, dark=False):
+def main(input_file, output, arm=False, dark=False):
+    
     if arm:
         global ARCH
         ARCH = "arm"
     if dark:
         global COLOR_PALETTE
         COLOR_PALETTE=COLORS.dark
-    preprocess_dot_file(input_file, output_file="output.dot")
+    preprocess_dot_file(input_file, output)
 
 
 if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="Process an input file with an optional architecture."
+        description="Syntax highlight assembly code in dot files"
     )
 
-    # Positional argument for the input file
     parser.add_argument("input_file", type=str, help="The input file to be processed")
-
-    # Optional argument for the architecture
+    
+    parser.add_argument('-o', '--output', type=str, default='output.dot', help='Specify the output file path (default: output.dot)')
+    
     parser.add_argument(
         "--arm", action="store_true", help="ARM Syntax Highlighting"
     )
@@ -106,4 +107,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    main(args.input_file, args.arm, args.dark)
+    main(args.input_file, args.output, args.arm, args.dark)
