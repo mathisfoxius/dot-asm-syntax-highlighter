@@ -75,10 +75,13 @@ def preprocess_dot_file(input_file, output_file):
         file.write(highlighted_content)
 
 
-def main(input_file, arm=False):
+def main(input_file, arm=False, dark=False):
     if arm:
         global ARCH
         ARCH = "arm"
+    if dark:
+        global COLOR_PALETTE
+        COLOR_PALETTE=COLORS.dark
     preprocess_dot_file(input_file, output_file="output.dot")
 
 
@@ -94,9 +97,13 @@ if __name__ == "__main__":
 
     # Optional argument for the architecture
     parser.add_argument(
-        "--arm", action="store_true", help="Specify if ARM architecture is to be used"
+        "--arm", action="store_true", help="ARM Syntax Highlighting"
+    )
+
+    parser.add_argument(
+        "--dark", action="store_true", help="Dark Color-Palette"
     )
 
     args = parser.parse_args()
 
-    main(args.input_file, args.arm)
+    main(args.input_file, args.arm, args.dark)
