@@ -7,5 +7,4 @@ CALL_INSTRUCTIONS = [
     "bxj",  # Branch and Exchange Jazelle
     "blr",  # Branch with Link to Register (ARMv8)
     "br",   # Branch to Register (ARMv8)
-    "ret"   # Return from Subroutine (ARMv8)
 ]
